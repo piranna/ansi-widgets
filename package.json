@@ -1,0 +1,44 @@
+{
+  "name": "ansi-widgets",
+  "version": "0.0.0",
+  "description": "UI widgets for the terminal using ANSI escape codes",
+  "main": "lib",
+  "scripts": {
+    "test": "jest --coverage --notify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piranna/ansi-widgets.git"
+  },
+  "keywords": [
+    "ANSI",
+    "widget",
+    "widgets",
+    "terminal",
+    "console",
+    "UI",
+    "TUI"
+  ],
+  "author": "Jesús Leganés-Combarro 'piranna' <piranna@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piranna/ansi-widgets/issues"
+  },
+  "homepage": "https://github.com/piranna/ansi-widgets#readme",
+  "dependencies": {
+    "align-text": "^1.0.2",
+    "center-align": "^1.0.1",
+    "chalk": "^2.4.1",
+    "justified": "^1.0.1",
+    "lodash.mergewith": "^4.6.1",
+    "longest": "^2.0.1",
+    "parse-color": "^1.0.0",
+    "right-align": "piranna/right-align",
+    "units-css": "github:piranna/units",
+    "word-wrap": "^1.2.3"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "jest": "^22.4.3"
+  }
+}
