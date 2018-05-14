@@ -14,6 +14,15 @@ test('one empty item', function()
 
   container.push(new Label())
 
+  expect(container.render()).toEqual([])
+})
+
+test('one empty label', function()
+{
+  const container = new Container()
+
+  container.push(new Label({text: ''}))
+
   expect(container.render()).toEqual([''])
 })
 

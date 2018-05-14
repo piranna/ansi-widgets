@@ -1,9 +1,16 @@
 const {Label} = require('..')
 
 
-test('empty', function()
+test('no text', function()
 {
   const label = new Label()
+
+  expect(label.render()).toEqual([])
+})
+
+test('empty text', function()
+{
+  const label = new Label({text: ''})
 
   expect(label.render()).toEqual([''])
 })
