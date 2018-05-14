@@ -1,4 +1,4 @@
-const {Container, Label} = require('..')
+const {Container, Image, Label} = require('..')
 
 
 test('empty', async function()
@@ -55,5 +55,25 @@ describe('two items', function()
     container.push(new Label({text: 'two'}))
 
     expect(await container.render()).toEqual(['onetwo'])
+  })
+
+  test('right-left', async function()
+  {
+    const container = new Container({direction: 'right-left'})
+
+    container.push(new Label({text: 'one'}))
+    container.push(new Image({url: `${__dirname}/fixtures/two.png`}))
+
+    expect(await container.render()).toEqual(require(`${__dirname}/fixtures/1.json`))
+  })
+
+  test('different height', async function()
+  {
+    const container = new Container({direction: 'left-right'})
+
+    container.push(new Label({text: 'one'}))
+    container.push(new Image({url: `${__dirname}/fixtures/two.png`}))
+
+    expect(await container.render()).toEqual(require(`${__dirname}/fixtures/2.json`))
   })
 })
