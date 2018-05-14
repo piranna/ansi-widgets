@@ -34,6 +34,7 @@
     "longest": "^2.0.1",
     "parse-color": "^1.0.0",
     "right-align": "piranna/right-align",
+    "string-width": "^2.1.1",
     "units-css": "github:piranna/units",
     "word-wrap": "^1.2.3"
   },
