@@ -1,28 +1,28 @@
 const {Label} = require('..')
 
 
-test('no text', function()
+test('no text', async function()
 {
   const label = new Label()
 
-  expect(label.render()).toEqual([])
+  expect(await label.render()).toEqual([])
 })
 
-test('empty text', function()
+test('empty text', async function()
 {
   const label = new Label({text: ''})
 
-  expect(label.render()).toEqual([''])
+  expect(await label.render()).toEqual([''])
 })
 
-test('simple text', function()
+test('simple text', async function()
 {
   const label = new Label({text: 'simple text'})
 
-  expect(label.render()).toEqual(['simple text'])
+  expect(await label.render()).toEqual(['simple text'])
 })
 
-test('colored', function()
+test('colored', async function()
 {
   const label = new Label({
     backgroundColor: 'rgb(255,0,0)',
@@ -30,28 +30,28 @@ test('colored', function()
     text: 'colored'
   })
 
-  expect(label.render())
+  expect(await label.render())
   .toEqual(['\u001b[38;2;0;255;0m\u001b[48;2;255;0;0mcolored\u001b[49m\u001b[39m'])
 })
 
-test('height', function()
+test('height', async function()
 {
   const label = new Label({height: 4, text: 'height'})
 
-  expect(label.render()).toEqual(['height', '      ', '      ', '      '])
+  expect(await label.render()).toEqual(['height', '      ', '      ', '      '])
 })
 
-test('width', function()
+test('width', async function()
 {
   const label = new Label({text: 'width', width: 10})
 
-  expect(label.render()).toEqual(['width     '])
+  expect(await label.render()).toEqual(['width     '])
 })
 
-test('height and width', function()
+test('height and width', async function()
 {
   const label = new Label({height: 4, text: 'asdf', width: 10})
 
-  expect(label.render())
+  expect(await label.render())
   .toEqual(['asdf      ', '          ', '          ', '          '])
 })

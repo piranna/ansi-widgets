@@ -1,59 +1,59 @@
 const {Container, Label} = require('..')
 
 
-test('empty', function()
+test('empty', async function()
 {
   const container = new Container()
 
-  expect(container.render()).toEqual([])
+  expect(await container.render()).toEqual([])
 })
 
-test('one empty item', function()
+test('one empty item', async function()
 {
   const container = new Container()
 
   container.push(new Label())
 
-  expect(container.render()).toEqual([])
+  expect(await container.render()).toEqual([])
 })
 
-test('one empty label', function()
+test('one empty label', async function()
 {
   const container = new Container()
 
   container.push(new Label({text: ''}))
 
-  expect(container.render()).toEqual([''])
+  expect(await container.render()).toEqual([''])
 })
 
-test('one item', function()
+test('one item', async function()
 {
   const container = new Container()
 
   container.push(new Label({text: 'label'}))
 
-  expect(container.render()).toEqual(['label'])
+  expect(await container.render()).toEqual(['label'])
 })
 
 describe('two items', function()
 {
-  test('top-bottom', function()
+  test('top-bottom', async function()
   {
     const container = new Container()
 
     container.push(new Label({text: 'one'}))
     container.push(new Label({text: 'two'}))
 
-    expect(container.render()).toEqual(['one', 'two'])
+    expect(await container.render()).toEqual(['one', 'two'])
   })
 
-  test('left-right', function()
+  test('left-right', async function()
   {
     const container = new Container({direction: 'left-right'})
 
     container.push(new Label({text: 'one'}))
     container.push(new Label({text: 'two'}))
 
-    expect(container.render()).toEqual(['onetwo'])
+    expect(await container.render()).toEqual(['onetwo'])
   })
 })
