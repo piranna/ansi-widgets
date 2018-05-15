@@ -15,3 +15,10 @@ test('local image', async function()
   // require('fs').writeFileSync(`${__dirname}/fixtures/dog.json`, JSON.stringify(await image.render(), null, 2))
   expect(await image.render()).toEqual(require(`${__dirname}/fixtures/dog.json`))
 })
+
+test('text', async function()
+{
+  const image = new Image({text: 'dos', url: `${__dirname}/fixtures/two.png`})
+
+  expect(await image.render()).toEqual(require(`${__dirname}/fixtures/dos.json`))
+})
