@@ -29,6 +29,7 @@
     "align-text": "^1.0.2",
     "center-align": "^1.0.1",
     "chalk": "^2.4.1",
+    "fast-deep-equal": "^2.0.1",
     "justified": "^1.0.1",
     "lodash.mergewith": "^4.6.1",
     "longest": "^2.0.1",
