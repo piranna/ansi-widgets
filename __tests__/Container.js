@@ -1,79 +1,113 @@
 const {Container, Image, Label} = require('..')
 
 
-test('empty', async function()
+test('empty', function()
 {
   const container = new Container()
 
-  expect(await container.render()).toEqual([])
+  expect(container.render()).toEqual([])
 })
 
-test('one empty item', async function()
+test('one empty item', function()
 {
   const container = new Container()
 
   container.push(new Label())
 
-  expect(await container.render()).toEqual([])
+  expect(container.render()).toEqual([])
 })
 
-test('one empty label', async function()
+test('one empty label', function()
 {
   const container = new Container()
 
   container.push(new Label({text: ''}))
 
-  expect(await container.render()).toEqual([''])
+  expect(container.render()).toEqual([''])
 })
 
-test('one item', async function()
+test('one item', function()
 {
   const container = new Container()
 
   container.push(new Label({text: 'label'}))
 
-  expect(await container.render()).toEqual(['label'])
+  expect(container.render()).toEqual(['label'])
 })
 
 describe('two items', function()
 {
-  test('top-bottom', async function()
+  test('top-bottom', function()
   {
     const container = new Container()
 
     container.push(new Label({text: 'one'}))
     container.push(new Label({text: 'two'}))
 
-    expect(await container.render()).toEqual(['one', 'two'])
+    expect(container.render()).toEqual(['one', 'two'])
   })
 
-  test('left-right', async function()
+  test('left-right', function()
   {
     const container = new Container({direction: 'left-right'})
 
     container.push(new Label({text: 'one'}))
     container.push(new Label({text: 'two'}))
 
-    expect(await container.render()).toEqual(['onetwo'])
+    expect(container.render()).toEqual(['onetwo'])
   })
 
-  test('right-left', async function()
+  test('right-left', function()
   {
     const container = new Container({direction: 'right-left'})
 
-    container.push(new Label({text: 'one'}))
-    container.push(new Image({url: `${__dirname}/fixtures/two.png`}))
+    const image = new Image({url: `${__dirname}/fixtures/two.png`})
 
-    expect(await container.render()).toEqual(require(`${__dirname}/fixtures/1.json`))
+    container.push(new Label({text: 'one'}))
+    container.push(image)
+
+    expect(container.render()).toEqual(['one'])
+
+    container.on('renderReady', function(stack)
+    {
+      expect(this).toBe(container)
+      expect(stack).toEqual([image, container])
+
+      const start  = performance.now()
+      const result = container.render()
+      const finish = performance.now()
+
+      expect(result).toEqual(require(`${__dirname}/fixtures/1.json`))
+      expect(finish - start).toBeLessThanOrEqual(1)
+
+      done()
+    })
   })
 
-  test('different height', async function()
+  test('different height', function()
   {
     const container = new Container({direction: 'left-right'})
 
-    container.push(new Label({text: 'one'}))
-    container.push(new Image({url: `${__dirname}/fixtures/two.png`}))
+    const image = new Image({url: `${__dirname}/fixtures/two.png`})
 
-    expect(await container.render()).toEqual(require(`${__dirname}/fixtures/2.json`))
+    container.push(new Label({text: 'one'}))
+    container.push(image)
+
+    expect(container.render()).toEqual(['one'])
+
+    container.on('renderReady', function(stack)
+    {
+      expect(this).toBe(container)
+      expect(stack).toEqual([image, container])
+
+      const start  = performance.now()
+      const result = container.render()
+      const finish = performance.now()
+
+      expect(result).toEqual(require(`${__dirname}/fixtures/2.json`))
+      expect(finish - start).toBeLessThanOrEqual(1)
+
+      done()
+    })
   })
 })
