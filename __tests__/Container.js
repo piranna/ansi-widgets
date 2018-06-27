@@ -49,7 +49,7 @@ describe('two items', function()
 
   test('left-right', function()
   {
-    const container = new Container({direction: 'left-right'})
+    const container = new Container({horizontal: true})
 
     container.push(new Label({text: 'one'}))
     container.push(new Label({text: 'two'}))
@@ -59,7 +59,7 @@ describe('two items', function()
 
   test('right-left', function()
   {
-    const container = new Container({direction: 'right-left'})
+    const container = new Container({horizontal: true, reverse: true})
 
     const image = new Image({url: `${__dirname}/fixtures/two.png`})
 
@@ -86,7 +86,7 @@ describe('two items', function()
 
   test('different height', function()
   {
-    const container = new Container({direction: 'left-right'})
+    const container = new Container({horizontal: true})
 
     const image = new Image({url: `${__dirname}/fixtures/two.png`})
 
