@@ -28,7 +28,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [piranna/ansi-widgets](https://github.com/piranna/ansi-widgets)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|11<br/>Tools used|12/27/23 <br/>Report generated|
+|12<br/>Tools used|01/05/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -96,13 +96,14 @@ Full tech stack [here](/techstack.md)
 </table>
 
 
-## <img src='https://img.stackshare.io/group.svg' /> Open source packages (5)</h2>
+## <img src='https://img.stackshare.io/group.svg' /> Open source packages (6)</h2>
 
-## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (5)
+## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (6)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
 |[babel-plugin-transform-class-properties](https://www.npmjs.com/babel-plugin-transform-class-properties)|v6.24.1|05/09/18|Jesús Leganés-Combarro 'piranna |MIT|N/A|
+|[chalk](https://www.npmjs.com/chalk)|v2.4.1|05/09/18|Jesús Leganés-Combarro 'piranna |MIT|N/A|
 |[fast-deep-equal](https://www.npmjs.com/fast-deep-equal)|v2.0.1|06/26/18|Jesús Leganés-Combarro 'piranna |MIT|N/A|
 |[lodash.mergewith](https://www.npmjs.com/lodash.mergewith)|v4.6.1|05/09/18|Jesús Leganés-Combarro 'piranna |MIT|[CVE-2019-10744](https://github.com/advisories/GHSA-jf85-cpcp-j695) (Critical)<br/>[](https://github.com/advisories/GHSA-779f-wgxg-qr8f) (High)|
 |[string-width](https://www.npmjs.com/string-width)|v2.1.1|05/14/18|Jesús Leganés-Combarro 'piranna |MIT|N/A|
